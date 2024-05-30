@@ -1,0 +1,16 @@
+﻿@page "/tasks"
+<Table TItem="Scheduler" Items="Schedulers" ShowExtendButtons="true" ShowToolbar="true" ExtendButtonColumnWidth="400">
+    <TableColumns>
+        <TableColumn @bind-Field="@context.Name" Text="任务名称" />
+        <TableColumn @bind-Field="@context.LastRuntime" Text="最后一次执行时间" />
+        <TableColumn @bind-Field="@context.LastRunResult" Text="最后一次执行结果" />
+        <TableColumn @bind-Field="@context.NextRuntime" Text="下次执行时间" />
+        <TableColumn @bind-Field="@context.CreatedTime" Text="创建时间" />
+        <TableColumn @bind-Field="@context.Status" Text="任务状态" />
+    </TableColumns>
+    <RowButtonTemplate>
+        <TableCellPopConfirmButton Text="最近运行时间"></TableCellPopConfirmButton>
+        <TableCellPopConfirmButton Text="立即执行"></TableCellPopConfirmButton>
+        <TableCellPopConfirmButton Text="停止"></TableCellPopConfirmButton>
+    </RowButtonTemplate>
+</Table>
