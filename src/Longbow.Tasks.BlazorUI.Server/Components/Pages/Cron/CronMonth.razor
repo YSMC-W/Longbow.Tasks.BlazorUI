@@ -1,0 +1,39 @@
+﻿@inherits Longbow.Tasks.BlazorUI.Server.Components.Pages.Cron.CronItemBase
+
+<CronRadio Name="CronMonth" Value="PerMonth" @bind-CheckedString="CheckedString" Text="每月"></CronRadio>
+
+<CronRadio Name="CronMonth" Value="CycleMonth" Text="周期从" @bind-CheckedString="CheckedString" Context="Checked">
+    <div class="col-auto">
+        <BootstrapInput TValue="string" IsDisabled="!Checked"></BootstrapInput>
+    </div>
+    <div class="col-auto col-form-label">
+        <label>月到</label>
+    </div>
+    <div class="col-auto">
+        <BootstrapInput TValue="string" IsDisabled="!Checked"></BootstrapInput>
+    </div>
+    <div class="col-auto col-form-label">
+        <label>月</label>
+    </div>
+</CronRadio>
+
+<CronRadio Name="CronMonth" Value="FromToMonth" Text="从" @bind-CheckedString="CheckedString" Context="Checked">
+    <div class="col-auto">
+        <BootstrapInput TValue="string" IsDisabled="!Checked"></BootstrapInput>
+    </div>
+    <div class="col-auto col-form-label">
+        <label>月开始，每</label>
+    </div>
+    <div class="col-auto">
+        <BootstrapInput TValue="string" IsDisabled="!Checked"></BootstrapInput>
+    </div>
+    <div class="col-auto col-form-label">
+        <label>月执行一次</label>
+    </div>
+</CronRadio>
+
+<CronRadio Name="CronMonth" Value="AppointMonth" Text="指定" @bind-CheckedString="CheckedString" Context="Checked">
+    <div class="col-12 col-sm-10">
+        <MultiSelect Items="SelectedItems" @bind-Value="@Value" IsDisabled="!Checked" />
+    </div>
+</CronRadio>

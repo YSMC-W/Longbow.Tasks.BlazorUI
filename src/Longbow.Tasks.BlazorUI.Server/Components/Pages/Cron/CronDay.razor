@@ -1,0 +1,50 @@
+﻿@inherits Longbow.Tasks.BlazorUI.Server.Components.Pages.Cron.CronItemBase
+
+<CronRadio Name="CronDay" Value="PerDay" @bind-CheckedString="CheckedString" Text="每日"></CronRadio>
+<CronRadio Name="CronDay" Value="NoAppointDay" @bind-CheckedString="CheckedString" Text="不指定"></CronRadio>
+<CronRadio Name="CronDay" Value="LastDay" @bind-CheckedString="CheckedString" Text="每月最后一天"></CronRadio>
+
+<CronRadio Name="CronDay" Value="CycleDay" Text="周期从" @bind-CheckedString="CheckedString" Context="Checked">
+    <div class="col-auto">
+        <BootstrapInput TValue="string" IsDisabled="!Checked"></BootstrapInput>
+    </div>
+    <div class="col-auto col-form-label">
+        <label>日到</label>
+    </div>
+    <div class="col-auto">
+        <BootstrapInput TValue="string" IsDisabled="!Checked"></BootstrapInput>
+    </div>
+    <div class="col-auto col-form-label">
+        <label>日</label>
+    </div>
+</CronRadio>
+
+<CronRadio Name="CronDay" Value="FromToDay" Text="从" @bind-CheckedString="CheckedString" Context="Checked">
+    <div class="col-auto">
+        <BootstrapInput TValue="string" IsDisabled="!Checked"></BootstrapInput>
+    </div>
+    <div class="col-auto col-form-label">
+        <label>日开始，每</label>
+    </div>
+    <div class="col-auto">
+        <BootstrapInput TValue="string" IsDisabled="!Checked"></BootstrapInput>
+    </div>
+    <div class="col-auto col-form-label">
+        <label>日执行一次</label>
+    </div>
+</CronRadio>
+
+<CronRadio Name="CronDay" Value="ClosestWorkingDay" Text="每月" @bind-CheckedString="CheckedString" Context="Checked">
+    <div class="col-auto">
+        <BootstrapInput TValue="string" IsDisabled="!Checked"></BootstrapInput>
+    </div>
+    <div class="col-auto col-form-label">
+        <label>号最近的工作日</label>
+    </div>
+</CronRadio>
+
+<CronRadio Name="CronDay" Value="AppointDay" Text="指定" @bind-CheckedString="CheckedString" Context="Checked">
+    <div class="col-12 col-sm-10">
+        <MultiSelect Items="SelectedItems" @bind-Value="@Value" IsDisabled="!Checked" />
+    </div>
+</CronRadio>

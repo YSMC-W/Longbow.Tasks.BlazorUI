@@ -1,0 +1,44 @@
+﻿@page "/cron"
+
+<Tab IsBorderCard="true">
+    <TabItem Text="秒">
+        <CronSecond />
+        @CronRenderFragment
+    </TabItem>
+    <TabItem Text="分钟">
+        <CronMinute />
+        @CronRenderFragment
+    </TabItem>
+    <TabItem Text="小时">
+        <CronHour />
+        @CronRenderFragment
+    </TabItem>
+    <TabItem Text="天">
+        <CronDay />
+        @CronRenderFragment
+    </TabItem>
+    <TabItem Text="月">
+        <CronMonth />
+        @CronRenderFragment
+    </TabItem>
+    <TabItem Text="星期">
+        @CronRenderFragment
+    </TabItem>
+    <TabItem Text="年">
+        @CronRenderFragment
+    </TabItem>
+</Tab>
+
+@code {
+    RenderFragment CronRenderFragment =>
+    @<div class="row" style="margin-bottom:8px;">
+        <div class="col-12">
+            <BootstrapInputGroup>
+                <BootstrapInputGroupLabel DisplayText="Cron Expression" />
+                <BootstrapInput Value="@CronExpression" />
+                <Button Text="反解析到UI"></Button>
+            </BootstrapInputGroup>
+        </div>
+    </div>;
+}
+

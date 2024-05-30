@@ -22,4 +22,10 @@
     <PackageReference Include="Longbow.Tasks" Version="8.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Components\Pages\Cron\CronDay.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
 </Project>
